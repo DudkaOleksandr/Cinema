@@ -448,6 +448,9 @@ namespace KR_1._1
             }
             seatButtons.Clear();
 
+            HideSessionButtons(); // Скидаємо видимість усіх кнопок сеансів
+            HideMovieButtons();  // Скидаємо видимість усіх кнопок фільмів
+
             if (phase == 4)
             {
                 phase = 3;
@@ -471,6 +474,8 @@ namespace KR_1._1
 
         private void ShowMoviesForSession()
         {
+            if (string.IsNullOrEmpty(selectedSession)) return;
+
             switch (selectedSession)
             {
                 case "Ранковий сеанс":
